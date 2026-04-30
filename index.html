@@ -1046,8 +1046,8 @@
             <h2>CITIZEN USER STORIES</h2>
             <h3>As a Citizen,</h3>
             <div class="dropdown">
-                <button onclick="dropdownFunction()" class="dropdown-button">Open User Stories</button>
-                <div id="citizen-stories-dropdown" class="dropdown-content">
+                <button onclick="dropdownFunction(this)" class="dropdown-button">Open User Stories</button>
+                <div class="dropdown-content">
                     <ul style="font-size: 1.2rem; line-height: 2; margin-left: 2rem; color: #555;">
                         <li>I want to report the location of where trash is located so that other users can see where the issue is at and potentially clean it up.</li>
                         <li>I want to upload photos of litter I find so that others can see the issue, clean it, and mark it as cleaned.</li>
@@ -1082,8 +1082,8 @@
             <h2>ORGANIZATION USER STORIES</h2>
             <h3>As an Organization,</h3>
             <div class="dropdown">
-                <button onclick="dropdownFunction()" class="dropdown-button">Open User Stories</button>
-                <div id="citizen-stories-dropdown" class="dropdown-content">
+                <button onclick="dropdownFunction(this)" class="dropdown-button">Open User Stories</button>
+                <div class="dropdown-content">
                     <ul style="font-size: 1.2rem; line-height: 2; margin-left: 2rem; color: #555">
                         <li>I want to report the location of where trash is located so that other users can see where the issue is at and potentially clean it up.</li>
                         <li>I want to upload photos of litter I find so that others can see the issue, clean it, and mark it as cleaned.</li>
@@ -1128,8 +1128,8 @@
             <h2>LOCAL GOVERNMENT USER STORIES</h2>
             <h3>As a Local Government,</h3>
             <div class="dropdown">
-                <button onclick="dropdownFunction()" class="dropdown-button">Open User Stories</button>
-                <div id="citizen-stories-dropdown" class="dropdown-content">
+                <button onclick="dropdownFunction(this)" class="dropdown-button">Open User Stories</button>
+                <div class="dropdown-content">
                     <ul style="font-size: 1.2rem; line-height: 2; margin-left: 2rem; color: #555;">
                         <li>I want to view aggregated litter trends and density maps so that I can identify problem areas.</li>
                         <li>I want to access statistics about litter reports and cleanups so that I can plan budgets and policies.</li>
@@ -1151,8 +1151,8 @@
             <h3>As a Moderator,</h3>
 
             <div class="dropdown">
-                <button onclick="dropdownFunction()" class="dropdown-button">Open User Stories</button>
-                <div id="citizen-stories-dropdown" class="dropdown-content">
+                <button onclick="dropdownFunction(this)" class="dropdown-button">Open User Stories</button>
+                <div class="dropdown-content">
                     <ul style="font-size: 1.2rem; line-height: 2; margin-left: 2rem; color: #555;">
                         <li>I want to be able to monitor and review user-submitted reports so that I can automatically remove inappropriate or duplicate data.</li>
                         <li>I want to respond to post reports from users so that the platform remains trustworthy.</li>
@@ -1381,19 +1381,17 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function dropdownFunction() {
-            document.getElementById("citizen-stories-dropdown")
-            .classList.toggle("show");
+        function dropdownFunction(button) {
+            const dropdown = button.nextElementSibling;
+            dropdown.classList.toggle("show");
         }
 
         window.onclick = function(event) {
             if (!event.target.matches('.dropdown-button')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
+                const dropdowns = document.getElementsByClassName("dropdown-content");
+
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].classList.remove("show");
                 }
             }
         }
