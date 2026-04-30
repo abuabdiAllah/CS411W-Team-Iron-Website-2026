@@ -1036,7 +1036,8 @@
             <h3>As a Citizen,</h3>
             <div class="dropdown">
                 <button onclick="dropdownFunction()" class="dropdown-button"></button>
-                <div id="citizen-stories-dropdown">
+                <div id="citizen-stories-dropdown" class="dropdown-content">
+
                     <ul style="font-size: 1.2rem; line-height: 2; margin-left: 2rem; color: #555;">
                         <li>I want to report the location of where trash is located so that other users can see where the issue is at and potentially clean it up.</li>
                         <li>I want to upload photos of litter I find so that others can see the issue, clean it, and mark it as cleaned.</li>
@@ -1335,6 +1336,9 @@
         </section>
     </div>
 
+
+    <!------------------------------------------------->
+    <!-- JAVASCRIPT STUFF HERE -->
     <script>
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');
@@ -1344,7 +1348,26 @@
             document.getElementById(pageId).classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        function dropdownFunction() {
+            document.getElementById("dropdownFunction").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('dropdown-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
     </script>
+
+    
     <footer class="footer-links">
         <p>
             <a href="https://www.odu.edu/" target="_blank">Old Dominion University</a>
