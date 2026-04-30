@@ -498,6 +498,15 @@
             text-decoration: none;
             font-weight: 500;
         }
+
+        .dropdown-content {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
         
     </style>
 </head>
@@ -1035,7 +1044,7 @@
             <h2>CITIZEN USER STORIES</h2>
             <h3>As a Citizen,</h3>
             <div class="dropdown">
-                <button onclick="dropdownFunction()" class="dropdown-button"></button>
+                <button onclick="dropdownFunction()" class="dropdown-button">Open User Stories</button>
                 <div id="citizen-stories-dropdown" class="dropdown-content">
 
                     <ul style="font-size: 1.2rem; line-height: 2; margin-left: 2rem; color: #555;">
@@ -1350,14 +1359,14 @@
         }
 
         function dropdownFunction() {
-            document.getElementById("dropdownFunction").classList.toggle("show");
+            document.getElementById("citizen-stories-dropdown")
+            .classList.toggle("show");
         }
 
         window.onclick = function(event) {
-            if (!event.target.matches('dropdown-button')) {
+            if (!event.target.matches('.dropdown-button')) {
                 var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
+                for (var i = 0; i < dropdowns.length; i++) {
                     var openDropdown = dropdowns[i];
                     if (openDropdown.classList.contains('show')) {
                         openDropdown.classList.remove('show');
@@ -1367,7 +1376,7 @@
         }
     </script>
 
-    
+
     <footer class="footer-links">
         <p>
             <a href="https://www.odu.edu/" target="_blank">Old Dominion University</a>
