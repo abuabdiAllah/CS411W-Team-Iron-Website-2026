@@ -11,10 +11,14 @@
 <script src="script.js"></script>
 
 <body>
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav>
-        <ul>
-            <li class="logo">TrashTag</li>
+        <div class="logo">TrashTag</div>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">&#9776</label>
+
+        <ul class="menu">
             <li><a onclick="showPage('home')">Home</a></li>
             <li><a onclick="showPage('projectdescription')">Project Description</a></li>
             <li><a onclick="showPage('presentation')">Presentations</a></li>
@@ -24,7 +28,6 @@
             <li><a onclick="showPage('team')">Team</a></li>
             <li><a onclick="showPage('references')">References</a></li>
             <li><a onclick="showPage('glossary')">Glossary</a></li>
-
         </ul>
     </nav>
 
