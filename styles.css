@@ -65,6 +65,13 @@ nav a:hover {
     display: none;
 }
 
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
 
 
 
