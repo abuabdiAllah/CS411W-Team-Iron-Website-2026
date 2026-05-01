@@ -20,7 +20,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     background: linear-gradient(135deg, #4db8a8 0%, #3d7a5e 100%);
     padding: 1rem 2rem;
     position: fixed;
@@ -54,6 +54,15 @@ nav a:hover {
     font-weight: bold;
     margin-right: auto;
     color: white;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+#menu-toggle {
+    display: none;
 }
 
 
