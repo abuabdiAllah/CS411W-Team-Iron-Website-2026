@@ -12,9 +12,6 @@ body {
 }
 
 
-
-
-
 /* Navigation */
 nav {
     background: linear-gradient(135deg, #4db8a8 0%, #3d7a5e 100%);
@@ -51,10 +48,6 @@ nav a:hover {
     margin-right: auto;
     color: white;
 }
-
-
-
-
 
 
 
