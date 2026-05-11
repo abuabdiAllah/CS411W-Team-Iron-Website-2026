@@ -181,6 +181,13 @@ nav a:hover {
     background: white;
 }
 
+
+.presentation-title h2 {
+    color: #37867a;
+    font-size: 2.5rem;
+    margin-bottom: 1.1rem;
+}
+
 .iframe-content {
     position: relative;
     width: 100%;
